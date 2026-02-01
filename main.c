@@ -39,14 +39,9 @@ void erreur(int x){
 
 
 int main() {
-    /** 
-    int age_de_la_personne;
-    printf("Quel age as-tu ? \n>");
-    age_de_la_personne = get();
-    printf("Tu as %d ans.\n", age_de_la_personne);
-    
-    pointeur();
-    **/
+    printf("entrez un chiffre pour tester la limite d'un allocation mémoire :\n");
+    printf("* si votre os est en 32 bits par exemple la limite théorique est 2^32-1\n");
+    printf("* une commande utile est 'uname -a' sous Linux pour connaître l'architecture de votre pc\n");
     erreur(get());
     return 0;
 }
