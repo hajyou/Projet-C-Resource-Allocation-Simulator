@@ -39,9 +39,22 @@ void erreur(int x){
 
 
 int main() {
+    int choix = 0;
     printf("entrez un chiffre pour tester la limite d'un allocation mémoire :\n");
     printf("* si votre os est en 32 bits par exemple la limite théorique est 2^32-1\n");
     printf("* une commande utile est 'uname -a' sous Linux pour connaître l'architecture de votre pc\n");
-    erreur(get());
+    printf("* pour stopper le programme entrez -1\n");
+    while(choix != -1){
+        choix = get();
+        if (choix > 0){
+            erreur(choix);
+        }
+        else if (choix == -1){
+            printf("Arrét du programme ...\n");
+        }
+        else{
+            printf("Entrée invalide, veuillez réessayer.\n");
+        }
+    }
     return 0;
 }
