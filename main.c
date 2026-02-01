@@ -3,10 +3,10 @@
 #include <string.h>
 #include <errno.h>
 
-int get() {
-    int x;
+long long get() {
+    long long x;
     printf(">>>");
-    scanf("%d", &x);
+    scanf("%lld", &x);
     return x;
 }
 
@@ -39,7 +39,7 @@ void erreur(int x){
 
 
 int main() {
-    int choix = 0;
+    long long choix = 0;
     printf("entrez un chiffre pour tester la limite d'un allocation mémoire :\n");
     printf("* si votre os est en 32 bits par exemple la limite théorique est 2^32-1\n");
     printf("* une commande utile est 'uname -a' sous Linux pour connaître l'architecture de votre pc\n");
