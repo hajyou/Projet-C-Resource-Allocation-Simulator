@@ -1,36 +1,98 @@
-Programme en C qui manipule les vecteurs/matrices classiques de gestion de ressources
-(**EXIST, CURRENT, AVAILABLE, REQUEST, MAXREQUEST**) et simule l’exécution des processus
-afin de vérifier si l’état est **sûr** et/ou de détecter un **interblocage**.
+# Resource Allocation Simulator  
+**C • Operating Systems • Deadlock Detection**
 
-> Rappels Formules :
+Programme en C simulant la gestion de ressources entre plusieurs processus.  
+Le projet implémente les concepts classiques vus en systèmes d’exploitation :
+
+- EXIST
+- CURRENT
+- AVAILABLE
+- REQUEST
+- MAXREQUEST
+
+Il permet de simuler l’exécution des processus et de détecter un éventuel interblocage.
+
+---
+
+## 📚 Concepts implémentés
+
+Rappels théoriques :
+
 - `AVAILABLE = EXIST - somme_colonnes(CURRENT)`
 - `MAXREQUEST = CURRENT + REQUEST`
-- (équivalent : `REQUEST = MAXREQUEST - CURRENT`)
+- Un processus peut terminer si :  
+  `REQUEST[:,i] <= AVAILABLE`
 
-## Fonctionnalités
-- Saisie interactive :
-  - nombre de processus `P`
-  - nombre de ressources `R`
-  - vecteur `EXIST`
-  - matrice `CURRENT`
-  - matrice `REQUEST`
-- Calcul automatique :
-  - `AVAILABLE`
-  - `MAXREQUEST`
-- Simulation :
-  - Un processus `Pi` peut terminer si `REQUEST[:,i] <= AVAILABLE`
-  - Quand il termine, il “libère” ses ressources : `AVAILABLE += CURRENT[:,i]`
-- Résultat final :
-  - **Aucun interblocage** si tous les processus peuvent terminer
-  - **Interblocage détecté** sinon (liste des processus bloqués)
+Si un processus termine :
+- Il libère ses ressources
+- AVAILABLE est mis à jour
 
-## Exemple (idée)
-Le programme affiche les tableaux/matrices sous forme lisible et montre l’évolution de `AVAILABLE`
-à chaque processus terminé.
+Si aucun processus ne peut progresser → interblocage détecté.
 
-## Compilation & Exécution
+---
+
+## ⚙️ Technologies utilisées
+
+- Langage C
+- Allocation dynamique mémoire (`malloc`, `free`)
+- Manipulation de matrices dynamiques
+- Simulation d’état sûr
+
+---
+
+## 🚀 Compilation & Exécution
 
 ### Linux / macOS
+
 ```bash
-gcc -Wall -pedantic programme_vecteurs.c -o Programme
-./Programme
+gcc -Wall -Wextra -O2 main.c -o simulator
+./simulator
+```
+
+### Windows (MinGW)
+
+```bash
+gcc -Wall -Wextra -O2 main.c -o simulator.exe
+simulator.exe
+```
+
+---
+
+## 📥 Entrées utilisateur
+
+Le programme demande :
+
+- Nombre de processus
+- Nombre de ressources
+- Vecteur EXIST
+- Matrice CURRENT
+- Matrice REQUEST
+
+---
+
+## 📌 Fonctionnalités
+
+- Calcul automatique de AVAILABLE
+- Calcul automatique de MAXREQUEST
+- Simulation dynamique des processus
+- Affichage des matrices formatées
+- Détection d’interblocage
+- Libération propre de la mémoire
+
+---
+
+## 🧠 Finalité du projet
+
+Ce projet illustre :
+
+- La gestion de ressources en systèmes d’exploitation
+- La détection d’interblocage
+- La manipulation de matrices dynamiques en C
+- La gestion mémoire manuelle
+
+---
+
+## 👤 Auteur
+
+HAJRI Youssef  
+Étudiant en Informatique
