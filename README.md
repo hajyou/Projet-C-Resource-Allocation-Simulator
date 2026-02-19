@@ -32,5 +32,5 @@ Le programme affiche les tableaux/matrices sous forme lisible et montre l’évo
 
 ### Linux / macOS
 ```bash
-gcc -Wall -pedantic main.c -o Programme
+gcc -Wall -pedantic programme_vecteurs.c -o Programme
 ./Programme
