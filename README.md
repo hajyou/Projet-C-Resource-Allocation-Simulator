@@ -1,5 +1,4 @@
-# Resource Allocation Simulator  
-**C • Operating Systems • Deadlock Detection**
+# Resource Allocation Simulateur  
 
 Programme en C simulant la gestion de ressources entre plusieurs processus.  
 Le projet implémente les concepts classiques vus en systèmes d’exploitation :
