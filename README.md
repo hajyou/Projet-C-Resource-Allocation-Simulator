@@ -44,15 +44,15 @@ Si aucun processus ne peut progresser → interblocage détecté.
 ### Linux / macOS
 
 ```bash
-gcc -Wall -pedantic programme_vecteurs.c -o simulator
+gcc -Wall -pedantic programme_vecteurs.c -o simulateur
 ./simulator
 ```
 
 ### Windows (MinGW)
 
 ```bash
-gcc -Wall -pedantic programme_vecteurs.c -o simulator.exe
-simulator.exe
+gcc -Wall -pedantic programme_vecteurs.c -o simulateur.exe
+simulateur.exe
 ```
 
 ---
